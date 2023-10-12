@@ -27,7 +27,7 @@ from photutils import DAOStarFinder
 from astropy.stats import sigma_clipped_stats
 from scipy.interpolate import griddata
 from crispy.tools.imgtools import gen_bad_pix_mask
-from photutils import centroid_com
+from photutils.centroids import centroid_com
 
 
 # from photutils import EPSFBuilder
