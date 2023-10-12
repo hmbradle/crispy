@@ -229,7 +229,7 @@ def testCreateFlatfield(par,pixsize = 0.1,
     inCube = fits.HDUList(fits.PrimaryHDU(inputCube.astype(np.float32)))
     inCube[0].header['LAM_C'] = np.median(lam_midpts)/1000.
     inCube[0].header['PIXSIZE'] = pixsize
-    inCube.writeto(par.unitTestsOutputs+'/flatfield_input.fits',clobber=True)
+    inCube.writeto(par.unitTestsOutputs+'/flatfield_input.fits',overwrite=True)
     detectorFrame = polychromeIFS(par,lam_midpts,inCube[0],parallel=True,wavelist_endpts=lam_endpts,QE=useQE)
     detectorFrame = np.random.poisson(detectorFrame*maxflux/np.amax(detectorFrame)+bg)-bg
     Image(data=detectorFrame,header=par.hdr).write(par.unitTestsOutputs+'/'+outname,clobber=True)
