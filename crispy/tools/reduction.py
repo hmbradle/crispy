@@ -1,7 +1,7 @@
 try:
     from astropy.io import fits
-except BaseException:
-    import pyfits as fits
+#except BaseException:
+    #import pyfits as fits
 
 import numpy as np
 from crispy.tools.initLogger import getLogger
